@@ -10,8 +10,9 @@ import scala.concurrent.duration.Duration
   * Created by synerzip on 28/8/17.
   */
 
+
 object WindTurbineClusterShards extends App {
-  val port = 2551//args(0)
+  val port = args(0)
 
   val config = ConfigFactory.parseString(s"akka.remote.netty.tcp.port=$port")
     .withFallback(ConfigFactory.parseString("akka.cluster.roles = [WindTurbineSimulator]"))

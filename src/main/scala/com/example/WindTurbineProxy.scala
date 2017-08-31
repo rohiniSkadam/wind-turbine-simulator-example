@@ -15,7 +15,7 @@ import scala.concurrent.duration._
   * Created by synerzip on 28/8/17.
   */
 object WindTurbineProxy extends App {
-  val port = 2552//args(0)
+  val port = args(0)
 
   val config = ConfigFactory.parseString(s"akka.remote.netty.tcp.port=$port")
     .withFallback(ConfigFactory.parseString("akka.cluster.roles = [WindTurbineProxy]"))
